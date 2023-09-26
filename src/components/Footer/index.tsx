@@ -6,7 +6,7 @@ import './Footer.scss';
 const Footer = () => (
   <footer className='mainFooter'>
     <FooterIcons />
-    <p className='footerCopyright'> &copy; FinWiz 2022 </p>
+    <p className='footerCopyright'> &copy; DKFinance </p>
   </footer>
 );
 

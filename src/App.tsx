@@ -16,7 +16,7 @@ const App = () => {
   // check if user is authenticated
   const { isAuthenticated, isLoading } = useAuth0();
   const app = isAuthenticated ? AuthPages : Pages;
-
+    
   // if loading show loading placeholder
   // todo - replace with spinner or loading icon
   if (isLoading) return <Spinner />;

@@ -1,16 +1,28 @@
 // EXTERNAL
-import { useAuth0 } from '@auth0/auth0-react';
+import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
 // IMAGES
 import Icons from 'assets/icons';
 // Styles
 import './Landing.scss';
+import { useEffect } from 'react';
+import { investmentListServices } from 'services/investment';
 
 const { SiteLogoSvg } = Icons;
 
 const Landing = () => {
   const { user, loginWithRedirect } = useAuth0();
   const navigate = useNavigate();
+
+  // const url = window.location.href;
+
+  // <Auth0Provider   
+  //      domain={oauth_domain}
+  //      clientId={oauth_client_id}
+  //      authorizationParams = {{
+  //       redirect_uri:
+  //       window.location.origin,
+  //      }} >;
 
   return (
     <div className="landingContainer">
