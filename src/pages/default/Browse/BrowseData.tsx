@@ -1,4 +1,5 @@
 import { numberWithCommas, positiveNegative } from 'helpers/integer.helpers';
+import { text } from 'stream/consumers';
 
 export const browseCryptoColumns = [
   {

@@ -14,16 +14,6 @@ const Landing = () => {
   const { user, loginWithRedirect } = useAuth0();
   const navigate = useNavigate();
 
-  // const url = window.location.href;
-
-  // <Auth0Provider   
-  //      domain={oauth_domain}
-  //      clientId={oauth_client_id}
-  //      authorizationParams = {{
-  //       redirect_uri:
-  //       window.location.origin,
-  //      }} >;
-
   return (
     <div className="landingContainer">
       <div className="landingCenter">

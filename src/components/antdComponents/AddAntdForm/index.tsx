@@ -12,6 +12,7 @@ import { AntdFormProps } from './AntdFormInterfaces';
 import AutoCompleteForm from './components/AutoCompleteForm';
 import { userApi } from 'redux/store';
 import { useState } from 'react';
+import { assertCast } from '@reduxjs/toolkit/dist/query/tsHelpers';
 
 const AddAntdForm = ({ data }: AntdFormProps) => {
   const { useUserAddStockMutation, useUserAddCryptoMutation, useUserAddCommodityMutation } = userApi;

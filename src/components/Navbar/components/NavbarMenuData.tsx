@@ -12,7 +12,7 @@ export const navMenuList = [
     authentication: true,
   },
   {
-    title: 'Add',
+    title:'Add',
     icon: AddImg,
     authentication: true,
   },
@@ -21,11 +21,6 @@ export const navMenuList = [
     icon: NewsImg,
     authentication: false,
   },
-  // {
-  //   title: 'About',
-  //   icon: AboutImg,
-  //   authentication: false,
-  // },
 ];
 
 export const browseDropdown = [

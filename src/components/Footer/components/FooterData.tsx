@@ -10,7 +10,7 @@ export const footerData = [
   },
   {
     type: 'Github',
-    link: 'https://github.com/KachiiC/FinWiz_client',
+    link: 'https://github.com',
     icon: GitHub,
   },
   {
