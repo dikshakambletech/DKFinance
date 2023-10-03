@@ -13,11 +13,22 @@ import { IUserProfile } from 'interfaces/user/IUserProfile';
 // REDUX
 import { userApi } from 'redux/store';
 import { cryptoDataHelper, stockDataHelpers, commodityDataHelpers } from 'helpers/profileHelpers';
+import { mockAdminList } from './constants/mockadminList';
+import { useNavigate } from 'react-router-dom';
+import { mockProfileData } from './constants/mockUserProfiledata';
 
 const Profile = () => {
   // get user data from auth0
   const { user, isLoading } = useAuth0();
 
+  const navigate = useNavigate();
+
+  // ! hardcoded temporary function to check if logged user is admin and redirecting to admin dashboard
+  // ! todo: use api query to DB or auth0 to get user role
+  if (user && user.sub && mockAdminList.includes(user.sub.split('|')[1])) {
+    navigate('/admin-profile');
+  }
+  
   const { useGetUserQuery } = userApi;
 
   // get the user profile
@@ -29,6 +40,13 @@ const Profile = () => {
     });
 
     if (!profileLoading) profile = userProfile; console.log(profile);
+
+    // ! using mock profile data for user as no DB existed locally
+    // todo : use auth0 or db api call to get user details
+    if (!userProfile) {
+      profile = mockProfileData;
+    }
+
   }
   
   // get stocks and crypto values or set as empty array

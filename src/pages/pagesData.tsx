@@ -9,6 +9,7 @@ import StockBrowse from './default/Browse/components/StockBrowse';
 // AUTH PAGES
 import AddInvestments from './authenticatedPages/AddInvestment';
 import Profile from './authenticatedPages/Profile';
+import AdminDashboard from './authenticatedPages/AdminDashboard';
 import UpdateInvestments from './authenticatedPages/UpdateInvestment';
 import CommoditiesBrowse from './default/Browse/components/CommoditiesBrowse';
 import CryptoDetails from './default/Details/components/CryptoDetails';
@@ -90,6 +91,12 @@ export const authPages = [
     title: 'Profile',
     path: '/profile',
     element: <Profile />,
+    showDefault: false,
+  },
+  {
+    title: 'admin',
+    path: '/admin-profile',
+    element: <AdminDashboard />,
     showDefault: false,
   },
   {
