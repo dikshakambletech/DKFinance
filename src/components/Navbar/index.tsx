@@ -1,7 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 // COMPONENTS
 import { authNavMenus, defaultNavMenus } from './components/NavbarMenu';
-import { AuthButton, NavLogoIcon, NavbarDropdown } from './components/NavComponents';
+import { AuthButton } from './components/NavComponents';
 import MobileMenu from './components/MobileMenu';
 // STYLES
 import './Navbar.scss';
@@ -19,7 +19,6 @@ const Navbar = () => {
         <nav className='topNavbar'>
           <ul className='navLinks'>
             {navMenuLogic}
-            <NavbarDropdown />
             <AuthButton type={authButtonLogic} mobile={false} />
           </ul>
         </nav>

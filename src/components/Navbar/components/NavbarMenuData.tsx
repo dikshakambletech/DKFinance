@@ -3,41 +3,36 @@ import { Link } from 'react-router-dom';
 // IMAGES
 import Icons from 'assets/icons';
 
-const { ProfileImg, AddImg, NewsImg, AboutImg } = Icons;
+const { ProfileImg, AddImg, NewsImg, AboutImg, BrowseImg } = Icons;
 
 export const navMenuList = [
   {
     title: 'Profile',
     icon: ProfileImg,
     authentication: true,
+    path: '/profile',
   },
   {
-    title:'Add',
+    title: 'Add',
     icon: AddImg,
     authentication: true,
+    path: '/add',
   },
   {
     title: 'News',
     icon: NewsImg,
     authentication: false,
+    path: '/news',
   },
-];
-
-export const browseDropdown = [
   {
-    label: <Link to='/browse/stock'>Stock</Link>,
-    key: 'stock',
+    title: 'Browse Stock',
+    icon: BrowseImg,
+    authentication: false,
+    path: '/browse/stock',
   },
   // {
-  //   label: <Link to='/browse/crypto'>Crypto</Link>,
-  //   key: 'crypto',
-  // },
-  // {
-  //   label: <Link to='/browse/commodities'>Commodities</Link>,
-  //   key: 'commodities',
-  // },
-  // {
-  //   label: <Link to='/browse/forex'>Forex</Link>,
-  //   key: 'forex',
+  //   title: 'About',
+  //   icon: AboutImg,
+  //   authentication: false,
   // },
 ];

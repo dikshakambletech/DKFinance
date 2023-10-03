@@ -1,8 +1,6 @@
 // COMPONENTS
 import { Dropdown, Menu } from 'antd';
 import { Link } from 'react-router-dom';
-// DATA
-import { browseDropdown } from './NavbarMenuData';
 // EXTERNAL
 import { useAuth0 } from '@auth0/auth0-react';
 // IMAGES
@@ -24,19 +22,6 @@ export const NavLogoIcon = () => (
     </Link>
   </div>
 );
-
-export const NavbarDropdown = () => {
-  const BrowseDropDown = <Menu theme='dark' style={menuStyle} items={browseDropdown} />;
-
-  return (
-    <Dropdown overlay={BrowseDropDown}>
-      <li className='navLink'>
-        <img className='navIcon' src={BrowseImg} alt='browse' />
-        Browse
-      </li>
-    </Dropdown>
-  );
-};
 
 export const AuthButton = ({ type, mobile }: AuthButtonProps) => {
   const { logout, loginWithRedirect } = useAuth0();
