@@ -38,20 +38,20 @@ const AddAntdForm = ({ data }: AntdFormProps) => {
       sub: user?.sub,
     };
 
-    const commodityAsset = {
-      name: symbolVal,
-      quantity: numberOfShares,
-      buyCost: marketValuePerShare,
-      date: date._d,
-      sub: user?.sub,
-    };
+    // const commodityAsset = {
+    //   name: symbolVal,
+    //   quantity: numberOfShares,
+    //   buyCost: marketValuePerShare,
+    //   date: date._d,
+    //   sub: user?.sub,
+    // };
 
     if (select === 'stock') {
       userAddStock(asset);
-    } else if (select === 'crypto') {
-      userAddCrypto(asset);
-    } else if (select === 'commodity') {
-      userAddCommodity(commodityAsset);
+    // } else if (select === 'crypto') {
+    //   userAddCrypto(asset);
+    // } else if (select === 'commodity') {
+    //   userAddCommodity(commodityAsset);
     }
 
     // redirect
@@ -60,8 +60,8 @@ const AddAntdForm = ({ data }: AntdFormProps) => {
 
   const formValues = {
     stock: stockFormValues,
-    crypto: cryptoFormValues,
-    commodity: commoditiesFormValues,
+    // crypto: cryptoFormValues,
+    // commodity: commoditiesFormValues,
   };
 
   return (
@@ -77,8 +77,8 @@ const AddAntdForm = ({ data }: AntdFormProps) => {
             <Form.Item name='select'>
               <Select placeholder='Select Investment Type'>
                 <Select.Option value='stock'>Stock</Select.Option>
-                <Select.Option value='crypto'>Crypto</Select.Option>
-                <Select.Option value='commodity'>Commodity</Select.Option>
+                {/* <Select.Option value='crypto'>Crypto</Select.Option>
+                <Select.Option value='commodity'>Commodity</Select.Option> */}
               </Select>
             </Form.Item>
             <Form.Item>

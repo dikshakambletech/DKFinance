@@ -28,16 +28,16 @@ export const browseDropdown = [
     label: <Link to='/browse/stock'>Stock</Link>,
     key: 'stock',
   },
-  {
-    label: <Link to='/browse/crypto'>Crypto</Link>,
-    key: 'crypto',
-  },
-  {
-    label: <Link to='/browse/commodities'>Commodities</Link>,
-    key: 'commodities',
-  },
-  {
-    label: <Link to='/browse/forex'>Forex</Link>,
-    key: 'forex',
-  },
+  // {
+  //   label: <Link to='/browse/crypto'>Crypto</Link>,
+  //   key: 'crypto',
+  // },
+  // {
+  //   label: <Link to='/browse/commodities'>Commodities</Link>,
+  //   key: 'commodities',
+  // },
+  // {
+  //   label: <Link to='/browse/forex'>Forex</Link>,
+  //   key: 'forex',
+  // },
 ];

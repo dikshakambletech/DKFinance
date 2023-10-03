@@ -60,16 +60,16 @@ const Profile = () => {
       data: stockDataHelpers(stocksData),
       columns: stocksColumns,
     },
-    {
-      title: 'Crypto',
-      data: cryptoDataHelper(cryptoData),
-      columns: cryptoColumns,
-    },
-    {
-      title: 'Commodities',
-      data: commodityDataHelpers(commodityData),
-      columns: commodityColumns,
-    },
+    // {
+    //   title: 'Crypto',
+    //   data: cryptoDataHelper(cryptoData),
+    //   columns: cryptoColumns,
+    // },
+    // {
+    //   title: 'Commodities',
+    //   data: commodityDataHelpers(commodityData),
+    //   columns: commodityColumns,
+    // },
   ];
 
   const tabsData = investmentsData.map((inv) => {
