@@ -14,6 +14,12 @@ const UserDetails = ({ user, profile }: IUserDetails) => {
       <div className='userDetailsContainer'>
         <h1>{user.given_name}&apos;s Profile Details</h1>
         <p>
+          Profile Pic:
+          <span style={{ marginLeft: '4px' }}>
+            <img src={user.picture} style={{ borderRadius: '50%' }} />
+          </span>
+        </p>
+        <p>
           First Name: <span>{user.given_name}</span>
         </p>
         <p>
@@ -50,9 +56,7 @@ const UserDetails = ({ user, profile }: IUserDetails) => {
             )}
           </span>
         </p>
-        <p>
-          Profile Pic: <span>{user.picture}</span>
-        </p>
+
         <p>
           Address: <span>{'no address'}</span>
         </p>
