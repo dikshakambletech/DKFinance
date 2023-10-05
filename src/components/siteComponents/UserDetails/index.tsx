@@ -1,6 +1,12 @@
 // INTERFACES
 import { IUserDetails } from './UserDetailsInterfaces';
 // STYLES
+import { Form, Input, InputNumber, Select } from 'antd';
+import {
+  AntdFormButton,
+  AntdFormFields,
+} from 'components/antdComponents/UpdateAntdForm/components/AntdFormComponents';
+import { requiredRule } from 'pages/authenticatedPages/UpdateInvestment/components/UpdateInvestmentFormComponents';
 import './UserDetails.scss';
 
 const UserDetails = ({ user, profile }: IUserDetails) => {
@@ -9,9 +15,117 @@ const UserDetails = ({ user, profile }: IUserDetails) => {
   const largestStockHold = stocks ? stocks?.highestInvestmentStock : 'N/A';
   const largestCryptoHold = cryptos ? cryptos?.highestInvestedCurrency : 'N/A';
 
+  // fields to be shown in user info form // todo: move to separate files later
+  const formUserFielsData = [
+    {
+      name: 'firstName',
+      rules: requiredRule('Please input First Name'),
+      content: <Input placeholder='Please enter First Name' defaultValue={user.given_name} />,
+    },
+    {
+      name: 'lastName',
+      rules: requiredRule('Please input Last Name'),
+      content: <Input placeholder='Please enter Last Name' defaultValue={user.family_name} />,
+    },
+    {
+      name: 'emailId',
+      rules: requiredRule('Please input Email Id'),
+      content: <Input placeholder='Please enter Email Id' defaultValue={user.email} readOnly />,
+    },
+    // {
+    //   name: 'nickName',
+    //   rules: requiredRule('Please input Nick Name'),
+    //   content: <Input placeholder='Please enter Nick Name' />,
+    // },
+    {
+      name: 'gender',
+      rules: requiredRule('Please select Gender'),
+      content: (
+        <Select placeholder='Select Gender'>
+          <Select.Option value='male'>Male</Select.Option>
+          <Select.Option value='female'>Female</Select.Option>
+          <Select.Option value='others'>Others</Select.Option>
+        </Select>
+      ),
+    },
+    {
+      name: 'address',
+      rules: requiredRule('Please input Address'),
+      content: <Input placeholder='Please enter Address' />,
+    },
+    {
+      name: 'mobileNumber',
+      rules: requiredRule('Please input Mobile Number'),
+      content: <InputNumber placeholder='Please enter Mobile Number' />,
+    },
+    {
+      name: 'bankAccountNumber',
+      rules: requiredRule('Please input Bank Account Number'),
+      content: <InputNumber placeholder='Please enter Bank Account Number' />,
+    },
+    {
+      name: 'bankIfscCode',
+      rules: requiredRule('Please input Bank IFSC'),
+      content: <InputNumber placeholder='Please enter Bank IFSC' />,
+    },
+    {
+      name: 'pan',
+      rules: requiredRule('Please input PAN'),
+      content: <Input placeholder='Please enter PAN' />,
+    },
+    // {
+    //   name: 'aadharNumber',
+    //   rules: requiredRule('Please input Aadhar Number'),
+    //   content: <InputNumber placeholder='Please enter Aadhar Number' />,
+    // },
+  ];
+  // user info form on submit function // todo: move to separate files later
+  const onSubmit = (values) => {
+    const {
+      firstName,
+      lastName,
+      emailId,
+      // nickName,
+      gender,
+      address,
+      mobileNumber,
+      bankAccountNumber,
+      bankIfscCode,
+      pan,
+      // aadharNumber,
+    } = values;
+
+    console.log(`form values  
+      ${firstName},
+      ${lastName},
+      ${emailId},
+      ${gender},
+      ${address},
+      ${mobileNumber},
+      ${bankAccountNumber},
+      ${bankIfscCode},
+      ${pan},
+      `);
+    // ${nickName},
+    // ${aadharNumber}.
+
+    // TODO keep email as readonly ?
+    /**
+    // TODO
+     add in redux functions 
+     OR
+     call api and save data to a table by {
+        creating a new table for user info 
+        OR
+        updating existing table to accept above new fields
+      }
+       */
+  };
+
   return (
     <>
-      <div className='userDetailsContainer'>
+      {/* displays USER INFO like name, phone etc */}
+      {/* <div className='userDetailsContainer'>
         <h1>{user.given_name}&apos;s Profile Details</h1>
         <p>
           Profile Pic:
@@ -56,7 +170,9 @@ const UserDetails = ({ user, profile }: IUserDetails) => {
             )}
           </span>
         </p>
-
+        <p>
+          Gender: <span>{'NA'}</span>
+        </p>
         <p>
           Address: <span>{'no address'}</span>
         </p>
@@ -78,7 +194,22 @@ const UserDetails = ({ user, profile }: IUserDetails) => {
         <p>
           User Id: <span>{user.sub?.split('|')[1]}</span>
         </p>
+      </div> */}
+
+      {/* USER INFO FORM to show and update user info */}
+      <div className='genericContainer'>
+        <Form name='basic' onFinish={onSubmit}>
+          <div className='formContainer'>
+            <h1>{user.given_name}&apos;s Profile Details</h1>
+            <div className='antdFormSpacing'>
+              <AntdFormFields data={formUserFielsData} />
+              {AntdFormButton}
+            </div>
+          </div>
+        </Form>
       </div>
+
+      {/* PORTFOLIO */}
       <div className='userDetailsContainer'>
         <h1>{user.given_name}&apos;s Portfolio</h1>
         <p>
